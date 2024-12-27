@@ -2,14 +2,17 @@
 
 using namespace std;
 
+template<typename box>
+void mySwap(box & , box &);
+
 int main(){
 	int x, y;
 	string a, b;
 	char p, q;
 	
 	cin >> x >> y >> a >> b >> p >> q;
-	
-	cout << "Before swapping:\n";
+
+	cout << "Before swapping:\n";	
 	cout << "x = " << x << ", y = " << y << "\n";
 	mySwap(x,y);
 	cout << "After swapping:\n";
@@ -30,3 +33,9 @@ int main(){
 	return 0;
 }
 
+template <typename fill>
+void mySwap(fill &x, fill &y){
+	fill storage = x;
+	x = y;
+	y = storage;
+}
